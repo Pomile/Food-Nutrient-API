@@ -1,0 +1,38 @@
+{
+  "name": "food-nutrient",
+  "version": "1.0.0",
+  "description": "This app helps Health concious individuals who often want to look up detailed info of food.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config ./config/webpack.config.js",
+    "start:dev": "webpack-dev-server --config ./config/webpack.config.js --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pomile/Food-Nutrient.git"
+  },
+  "author": "Babatunde Ogedengbe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pomile/Food-Nutrient/issues"
+  },
+  "homepage": "https://github.com/Pomile/Food-Nutrient#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "style-loader": "^1.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.1"
+  }
+}
