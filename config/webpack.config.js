@@ -18,7 +18,7 @@ module.exports = {
     devServer: {
         contentBase: (__dirname, '../src/'),
         port: 8080,
-        hot: false
+        hot: true
     },
     optimization: devMode ? {} : {
         minimizer: [
@@ -29,7 +29,7 @@ module.exports = {
     },
     output: {
         filename: 'js/[name].bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
     },
     module: {
         rules: [
