@@ -1,24 +1,24 @@
 const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('./node_modules/webpack');
+const HtmlWebpackPlugin = require('./node_modules/html-webpack-plugin');
+const UglifyJSPlugin = require('./node_modules/uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require('./node_modules/mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('./node_modules/clean-webpack-plugin');
 
 
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     mode: process.env.NODE_ENV,
-    context: path.resolve(__dirname, '../src'),
+    context: path.resolve(__dirname, 'src'),
     entry: {
-        main: '../src/index.js',
+        main: './index.js',
     },
     devtool: devMode ? 'inline-source-map' : '',
     devServer: {
-        contentBase: (__dirname, '../src/'),
+        contentBase: __dirname,
         port: 8080,
-        hot: false
+        hot: true
     },
     optimization: devMode ? {} : {
         minimizer: [
@@ -28,8 +28,9 @@ module.exports = {
         ],
     },
     output: {
-        filename: 'js/[name].bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'build'),
+        publicPath: '/'
     },
     module: {
         rules: [
