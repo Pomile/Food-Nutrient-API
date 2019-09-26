@@ -1,0 +1,97 @@
+.searchBox{
+    width: 100%;
+    background-color:  rgba(0,0,0,0.5);
+    height: 40vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.searchBoxTop{
+    top: 30vh;
+}
+
+.searchBox select{
+    width: 60%;
+    padding: 8px;
+    border: none;
+}
+
+.search{
+    width: 30%;
+    height: 40px;
+    overflow: hidden;
+}
+
+.searchInputBox{
+   width: 100%;
+}
+
+.searchInput{
+   width: 74%;
+   padding: 0px 4%;
+   height: 40px;
+   font-size: 18px;
+   float:left;
+   border: none;
+}
+
+
+
+.searchInputBtn{
+    width:40px;
+    height:40px;
+    background: rgb(235, 73, 9);
+    float:left;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+    cursor: pointer;
+}
+
+.searchInputBtn:focus{
+    outline: none;
+}
+
+.searchInput:focus{
+    outline: none;
+}
+
+select{
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+select:focus{
+    outline: none;
+}
+.searchBox input[type=text]:focus{
+    outline: none;
+}
+
+.searchInputBtn i{
+    color: white;
+    padding-top: 5px;
+}
+
+@media (max-width: 600px) {
+    .search{
+        width: 80%;
+        height: 40px;
+        display: flex;
+        overflow: hidden;
+       
+    }
+    .searchInput{
+        float:left;
+    }
+    .searchInputBtn{
+    width:35px;
+    padding: 0px 1%;
+    height: 40px;
+    background: rgb(235, 73, 9);
+    float:left;
+    border-radius: 0px 15px 15px 0px;
+}
+}
