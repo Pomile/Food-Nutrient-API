@@ -1,0 +1,22 @@
+.wall{
+    background-image: url('../images/burger_by_master.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 0;
+}
+
+.quaterWall{
+    height: 40vh;
+    width: 100%;
+    padding-top: 50px;
+    background-color: rgb(219, 51, 51);
+    background-image: url('../images/thai.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
