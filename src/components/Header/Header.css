@@ -1,0 +1,15 @@
+.Header{
+    width: 100%;
+    padding: 5px;
+    height: 50px;
+    position: fixed;
+    z-index: 201;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.HeaderBg{
+    background-color: rgb(245, 86, 28);
+}
+

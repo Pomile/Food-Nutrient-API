@@ -12,5 +12,3 @@ if (sideDrawerCloseBtn) {
 
 window.displayProductNutrient = displayProductNutrient;
 window.closeProductNutrient = closeProductNutrient;
-
-

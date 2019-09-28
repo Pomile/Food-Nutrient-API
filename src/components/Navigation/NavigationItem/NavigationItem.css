@@ -1,0 +1,18 @@
+@media (min-width: 991px) {
+    .NavigationItem{
+        float: left;
+    }
+    .NavigationItem a {
+        display: block;
+        text-align: center;
+        padding: 22px 25px;
+        text-decoration: none;
+        color: white;
+        font-family: 'Segoe UI', Verdana, sans-serif;
+        font-size: 14px;
+    }
+    .NavigationItem:hover{
+        color: white;
+        background-color: rgba(241, 133, 93, 0.336);
+    }
+}
