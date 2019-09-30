@@ -1,0 +1,19 @@
+.Logo {
+    background-color: white;
+    padding:  8px;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: block;
+    width: 100px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Pacifico', cursive;
+    margin-left: 0%;
+}
+
+@media (min-width: 991px) {
+    .Logo{
+        margin-left: 15%;
+    }
+}

@@ -1,0 +1,11 @@
+.FullWall{
+    background-image: url('../../assets/images/burger_by_master.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(219, 51, 51);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 0;
+}
