@@ -1,6 +1,15 @@
-import { createStore } from 'redux';
-import rootReducer from './reducers'
-
-const store = createStore(rootReducer);
+import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
+import logger from 'redux-logger'
+import {
+    searchReducer,
+    uiReducer
+} from './reducers';
+const { NODE_ENV } = process.env;
+const myLogger = NODE_ENV === 'development'? logger : null;
+const composeEnhancers = NODE_ENV ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
+const store = createStore(combineReducers({
+    search: searchReducer,
+    ui: uiReducer
+}), {}, composeEnhancers(applyMiddleware(myLogger)));
 
 export default store;

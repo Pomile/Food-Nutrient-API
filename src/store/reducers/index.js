@@ -1,5 +1,7 @@
-const rootReducer = (state = { query : '' , products: []}, action) => {
-    return state;
-}
+import searchReducer from './searchReducer';
+import uiReducer from './uiReducer';
 
-export default rootReducer;
+export {
+    searchReducer,
+    uiReducer
+}

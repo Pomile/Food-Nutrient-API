@@ -7,7 +7,7 @@ const Sidedrawer = (props) => {
         [classes.Sidedrawer, classes.Close].join(' ');
     return (
         <div  className={sideDrawerClasses}>
-            <button className={classes.SidedrawerCloseBtn} onClick={props.clicked}>x</button>
+            <button className={classes.SidedrawerCloseBtn} onClick={() => props.clicked()}>x</button>
             <ul className={classes.SidedrawerNav}>
                 {list.map((item, index) => {
                     return (

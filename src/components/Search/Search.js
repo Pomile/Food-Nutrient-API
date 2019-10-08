@@ -6,10 +6,10 @@ const Search = (props) => {
         <div className={[classes.searchBox, classes.searchBoxTop].join(' ')}>
             <div className={classes.search}>
                 <div className={classes.searchInputBox}>
-                    <input className={classes.searchInput} type="text" placeholder="Search.." />
-                    <div className={classes.searchInputBtn}>
+                    <input className={classes.searchInput} type="text" placeholder="Search.." value={props.searchValue} onChange={() => props.change(event)} />
+                    <button className={classes.searchInputBtn} onClick={props.clicked}>
                         <i className={"material-icons"}>search</i>
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>

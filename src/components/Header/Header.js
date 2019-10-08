@@ -7,8 +7,11 @@ import Logo from '../Logo/Logo';
 import Backdrop from '../UI/Backdrop/Backdrop';
 
 const Header = (props) => {
+    const headerStyle = !props.bg ? classes.Header
+        : [classes.Header, classes.HeaderBg].join(' ');
+    console.log(headerStyle);
     return (
-        <div className={classes.Header}>
+        <div className={headerStyle}>
             <Backdrop show={props.show} />
             <Sidedrawer show={props.show} clicked={props.closeSidedrawer}  />
             <Logo />
