@@ -1,4 +1,5 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import logger from 'redux-logger'
 import {
     searchReducer,
@@ -10,6 +11,6 @@ const composeEnhancers = NODE_ENV ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ 
 const store = createStore(combineReducers({
     search: searchReducer,
     ui: uiReducer
-}), {}, composeEnhancers(applyMiddleware(myLogger)));
+}), {}, composeEnhancers(applyMiddleware(myLogger, thunk)));
 
 export default store;

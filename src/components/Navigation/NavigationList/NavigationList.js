@@ -10,7 +10,7 @@ const NavigationList = (props) => {
     ];
     return (
         <ul className={classes.Navigation}>
-            {list.map((item, index) => <NavigationItem path={item.path} name={item.name} key={index}/>)}
+            {list.map((item, index) => <NavigationItem path={item.path} key={index}>{item.name}</NavigationItem>)}
         </ul>
     );
 }

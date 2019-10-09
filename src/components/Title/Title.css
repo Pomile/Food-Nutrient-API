@@ -1,0 +1,11 @@
+.titleBox{
+    border: none;
+    border-bottom: 1px solid rgb(214, 211, 211);
+    padding: 0px 10px;
+    width: 70%;
+    margin-left: 15%;
+    font-size: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+    color: rgb(112, 109, 109);
+}
