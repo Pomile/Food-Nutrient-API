@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import classes from './Sidedrawer.css';
 
 const Sidedrawer = (props) => {
@@ -12,7 +13,7 @@ const Sidedrawer = (props) => {
                 {list.map((item, index) => {
                     return (
                         <li key={index}>
-                            <a className={classes.SidedrawerNavItem} href={item.path}>{item.name}</a>
+                            <NavLink className={classes.SidedrawerNavItem} to={item.path} exact={props.exact}>{item.name}</NavLink>
                         </li>
                     )
                 })}

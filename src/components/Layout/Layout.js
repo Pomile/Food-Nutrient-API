@@ -5,21 +5,6 @@ import Header from '../Header/Header';
 import * as action from '../../store/action'
 
 class Layout extends Component {
-    state = {
-        showSideDrawer: false
-    }
-
-    closeSideDrawerHandler = () => {
-
-        this.setState({ showSideDrawer: false });
-    }
-
-    sideDrawerToggleHandler = () => {
-        console.log('toggler clicked');
-        this.setState((prevState) => {
-            return { showSideDrawer: !prevState.showSideDrawer }
-        });
-    }
     render() {
         console.log('[Render in Layout.js] showSideDrawer:', this.props.ui.showSideDrawer);
         console.log(location.pathname);
