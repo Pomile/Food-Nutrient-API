@@ -1,26 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import FullWall from '../../components/Wall/FullWall';
+import Wall from '../../components/Wall/Wall';
 import Search from '../../components/Search/Search';
 import classes from './Home.css';
 import Aux from '../../hoc/Wrapper';
 import * as action from '../../store/action';
-import setHeaderBg from '../../store/action/setHeaderBg';
+
 class Home extends React.Component{
+   
     searchHandle = (value) => {
         this.props.history.replace("/products");
-        this.props.setHeaderBg();
     }
     render() {
-        console.log('find search value', this.props.search.searchValue);
         const value = this.props.search.searchValue;
         return (
             <Aux>
-                <FullWall />
+                <Wall type='full'/>
                 <div className={classes.captionTitleBlock}>
                     <h3 className={classes.captionDescription}>Access over 360,000 foods and their nutrient compositions</h3>
                 </div>
-                <Search input={value} clicked={() => this.searchHandle(value)} change={this.props.setSearchValue} />
+                <Search topMargin={true} input={value} clicked={() => this.searchHandle(value)} change={this.props.setSearchValue} />
             </Aux>
         );
     }
@@ -41,4 +40,3 @@ const mapDispatchToProps = dispatch => {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
-
