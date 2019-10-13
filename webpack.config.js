@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('./node_modules/html-webpack-plugin');
 const UglifyJSPlugin = require('./node_modules/uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('./node_modules/mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('./node_modules/clean-webpack-plugin');
-
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -18,7 +18,10 @@ module.exports = {
     devServer: {
         contentBase: __dirname,
         port: 8080,
-        hot: true
+        hot: true,
+        publicPath: '/',
+        historyApiFallback: true,
+        writeToDisk: true
     },
     optimization: devMode ? {} : {
         minimizer: [
@@ -94,12 +97,19 @@ module.exports = {
             filename: devMode ? '[name].css' : '[name].[hash].css'
         }),
         new HtmlWebpackPlugin({
-            title: 'Home',
-            filename: 'index.html',
-            template: 'index.html',
+            title: 'Food-Nutrient',
+            inject: true,
+            filename: './index.html',
+            template: './index.html',
+        }),
+        new WorkboxPlugin.GenerateSW({
+            // these options encourage the ServiceWorkers to get in there fast
+                  // and not allow any straggling "old" SWs to hang around
+                  clientsClaim: true,
+                  skipWaiting: true,
         }),
         new CleanWebpackPlugin(),
         devMode ? new webpack.NamedModulesPlugin() : '',
-        devMode ? new webpack.HotModuleReplacementPlugin() : '',
+        devMode ? new webpack.HotModuleReplacementPlugin() : ''
     ],
 };

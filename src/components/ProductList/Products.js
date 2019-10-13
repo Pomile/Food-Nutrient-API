@@ -12,7 +12,9 @@ const Products = (props) => {
                 {props.data.map((product) => (<Prod
                     image={product.image}
                     title={product.title}
-                    key={product.id} />))
+                    key={product.id}
+                    clicked={() => props.getProductDetail(product.id)}
+                />))
                 }
             </div>
         )

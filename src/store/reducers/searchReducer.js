@@ -1,32 +1,50 @@
 import utils from "../../shared/utils";
 import * as actionTypes from '../action/types';
-import * as actions from '../action/index';
 
 const initialState = {
+    loadingProducts: false,
+    productsError: false,
+    productsErrorMessage: '',
     searchValue: 'pizza',
-    loading: false,
-    error: false,
-    errorMessage: '',
     products: []
 };
+/**
+ *
+ * @param {object} state
+ * @param {object} action
+ * @returns {object} object
+ */
 const getProductsStart = (state, action) => {
-    const update = {
-        loading: true,
-        error: false
-    }
-    return utils.updateObject(state, update)
+    
+    return utils.updateObject(state, action.payload)
 }
-
+/**
+ *
+ * @param {object} state
+ * @param {object} action
+ * @returns {object} object
+ */
 const getProductsFail = (state, action) => {
     
     return utils.updateObject(state, action.payload)
 }
-
+/**
+ *
+ * @param {object} state
+ * @param {object} action
+ * @returns {object} object
+ */
 const getProductsSuccess = (state, action) => {
     
     return utils.updateObject(state, action.payload)
 }
 
+/**
+ * 
+ * @param {object} state 
+ * @param {object} action
+ * @returns {object} object 
+ */
 const searchReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.SET_SEARCH_VALUE: return utils.updateObject(state, action.payload);

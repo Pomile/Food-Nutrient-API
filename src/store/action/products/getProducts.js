@@ -15,11 +15,8 @@ const getProducts = (value) => {
     setTimeout(() => dispatch(getProductsStart()), 500);
     setTimeout(() => axios
       .get(`${baseUrl}/food/products/search?query=${value}&apiKey=${key}`)
-      .then(res => {
-        return dispatch(getProductsSuccess(res.data.products));
-      }).catch(err => {
-        dispatch(getProductsFail(err))
-      }), 1000);
+      .then(res => dispatch(getProductsSuccess(res.data.products)))
+      .catch(err => dispatch(getProductsFail(err))), 1000);
   }
 }
 
