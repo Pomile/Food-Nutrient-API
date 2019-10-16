@@ -1,0 +1,31 @@
+{
+  "name": "Food-Nutrition",
+  "short_name": "Nutrition facts",
+  "description": "Help health conscious individual to check product nutrition before they buy them",
+  "start_url": "https://frosty-jennings-fd1482.netlify.com/",
+  "display": "standalone",
+   "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "images/favicon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#FF8566",
+  "theme_color": "#FFF0e6",
+  "related_applications": [{
+    "platform": "play",
+    "url": "https://play.google.com/store/apps/details?id=cheeaun.hackerweb"
+  }]
+}

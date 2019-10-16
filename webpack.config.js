@@ -5,6 +5,7 @@ const UglifyJSPlugin = require('./node_modules/uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('./node_modules/mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('./node_modules/clean-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -90,6 +91,10 @@ module.exports = {
                     loader: 'html-loader',
                 },
             },
+            {
+                test: /\.json$/,
+                use: { loader: 'json-loader' },
+            },
         ],
     },
     plugins: [
@@ -108,6 +113,11 @@ module.exports = {
                   clientsClaim: true,
                   skipWaiting: true,
         }),
+
+        new CopyWebpackPlugin(
+            [{ from: 'assets/images', to: 'images/' }, './manifest.webmanifest'],
+            { ignore: ['.DS_Store'] }
+        ),
         new CleanWebpackPlugin(),
         devMode ? new webpack.NamedModulesPlugin() : '',
         devMode ? new webpack.HotModuleReplacementPlugin() : ''
