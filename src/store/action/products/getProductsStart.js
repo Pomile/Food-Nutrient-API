@@ -1,9 +1,12 @@
 import * as actionTypes from '../types';
 
-const getProductsStart = (state, action) => {
+/**
+ * @returns {object} object
+ */
+const getProductsStart = () => {
     return {
         type: actionTypes.GET_PRODUCTS_START,
-        payload: { loading: true, error: false }
+        payload: { loadingProducts: true, productsError: false }
     }
 }
 

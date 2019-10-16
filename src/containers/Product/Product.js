@@ -7,6 +7,9 @@ import Aux from '../../hoc/Wrapper';
 import * as action from '../../store/action';
 import Title from '../../components/Title/Title';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import Modal from '../../components/UI/Modal/Modal';
+import Nutrients from '../../components/ProductList/Nutrients/Nutrients';
+import ErrorBoundary from '../../hoc/ErrorBoundary';
 
 class Product extends React.Component {
 
@@ -16,24 +19,44 @@ class Product extends React.Component {
     componentWillUnmount() {
         this.props.setHeaderBg();
     }
+   
     componentDidMount() {
         const value = this.props.search.searchValue;
         this.props.getProducts(value);
     }
     render() {
-
+       
         const {
-            errorMessage,
             products,
             searchValue,
-            error,
-            loading
+            productsErrorMessage,
+            productsError,
+            loadingProducts
         } = this.props.search;
-        const prod = !loading ? (<Products
+        const { showModal } = this.props.ui;
+        const {
+            loadingProductDetail,
+            productDetailError,
+            productDetailErrorMessage,
+            product
+        } = this.props.product;
+        console.log('showModal state', showModal);
+        
+        const prod = !loadingProducts ? (<Products
             data={products}
-            error={error}
-            errorMessage={errorMessage} />)
-    : <Spinner />
+            error={productsError}
+            errorMessage={productsErrorMessage}
+            getProductDetail={this.props.getProductDetail} />)
+            : <Spinner />;
+        const productDetail = !loadingProductDetail ? <Nutrients
+            error={productDetailError}
+            errorMessage={productDetailErrorMessage}
+            data={product} /> :
+            <Spinner />;
+            
+        console.log('loadingProductDetail State', loadingProductDetail);
+        console.log('productDetailError', productDetailError);
+        console.log('productDetailErrorMsg', productDetailErrorMessage);
         return (
             <Aux>
                 <Wall type='quarter'>
@@ -45,7 +68,18 @@ class Product extends React.Component {
                     />
                 </Wall>
                 <Title>Products</Title>
-                {prod}
+                <ErrorBoundary>{prod}</ErrorBoundary>
+                <ErrorBoundary>
+                    {
+                        showModal
+                            ? <Modal
+                                show={showModal}
+                                close={this.props.closeProductDetailModal}>{productDetail}
+                            </Modal>
+                            : null
+                     }
+                </ErrorBoundary>
+
             </Aux>
         );
     }
@@ -53,7 +87,9 @@ class Product extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        search: state.search
+        search: state.search,
+        ui: state.ui,
+        product: state.product
     }
 }
 
@@ -61,7 +97,12 @@ const mapDispatchToProps = dispatch => {
     return {
         setSearchValue: (event) => dispatch(action.setSearchValue(event)),
         setHeaderBg: () => dispatch(action.setHeaderBg()),
-        getProducts: (value) => dispatch(action.getProducts(value))
+        getProducts: (value) => dispatch(action.getProducts(value)),
+        getProductDetail: (id) => dispatch(action.getProductDetail(id)),
+        closeProductDetailModal: () => {
+            dispatch(action.toggleModal());
+            dispatch(action.resetProductDetail());
+        }
     }
 }
 

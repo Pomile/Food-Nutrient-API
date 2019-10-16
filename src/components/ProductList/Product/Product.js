@@ -3,7 +3,7 @@ import classes from './Product.css';
 
 const Prod = (props) => {
     return (
-        <div className={classes.product}>
+        <div className={classes.product} onClick={props.clicked}>
             <img className={classes.productImage} src={props.image} />
             <div className={classes.productName}>{props.title}</div>
         </div>

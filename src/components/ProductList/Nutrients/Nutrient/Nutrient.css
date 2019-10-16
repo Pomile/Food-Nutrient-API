@@ -1,0 +1,15 @@
+.nutrientUnit{
+    text-align: right
+}
+
+.nutrientRow{
+    display: flex;
+    width: 94%;
+    padding: 0 2%;
+    justify-content: space-around;
+}
+
+.nutrient, .nutrientUnit{
+    width: 40%;
+    padding:8px;
+}
