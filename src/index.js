@@ -6,6 +6,7 @@ import registerServiceWorker from './serviceWorker';
 import App from "./App.js";
 import store from './store/store';
 import './index.css';
+import './pwaPromptInstall';
 
 const app = (
     <Provider store={store}>
