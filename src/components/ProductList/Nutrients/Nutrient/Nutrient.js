@@ -6,6 +6,7 @@ const Nutrient = (props) => {
         <div className={classes.nutrientRow}>
             <div className={classes.nutrient}>{props.name}</div>
             <div className={classes.nutrientUnit}>{props.unit}</div>
+            <div className={classes.nutrientUnit}>{props.amount}</div>
         </div>  
     )
 }

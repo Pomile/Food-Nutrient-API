@@ -8,6 +8,7 @@
     position: fixed;
     z-index: 101;
     border-radius: 20px;
+    padding: 1rem;
 }
 
 .modalCloseBtn{ 

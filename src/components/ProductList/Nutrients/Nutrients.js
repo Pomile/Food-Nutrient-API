@@ -6,10 +6,9 @@ import Error from '../../UI/Error/Error';
 const Nutrients = (props) => {
     const { data, error, errorMessage } = props;
     if (!error) {
-        const nutrientComposition = Object.keys(data.nutrition);
-        const nutrientUnits = Object.values(data.nutrition);
+        const nutrientComposition = data.nutrition.nutrients;
         return (
-            <div>
+            <div className={classes.nutrient}>
                 <div className={classes.nutrientImgHolder}>
                     <img className={classes.nutrientImg} src={data.images[2]} />
                 </div>
@@ -17,8 +16,9 @@ const Nutrients = (props) => {
                 <div className={classes.nutrients}>
                     {
                         nutrientComposition.map((nutrient, index) => <Nutrient
-                            name={nutrient}
-                            unit={nutrientUnits[index]}
+                            name={nutrient.title}
+                            unit={nutrient.unit}
+                            amount={nutrient.amount}
                             key={index} />)
                     }
                 </div>
