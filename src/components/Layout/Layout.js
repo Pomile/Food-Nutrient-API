@@ -13,7 +13,7 @@ class Layout extends Component {
             </Aux>
         );
     }
-} 
+}
 
 const mapStateToProps = state => {
     return {

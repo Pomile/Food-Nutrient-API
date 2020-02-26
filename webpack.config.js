@@ -113,7 +113,7 @@ module.exports = {
                   clientsClaim: true,
                   skipWaiting: true,
         }),
-
+        
         new CopyWebpackPlugin(
             [{ from: 'assets/images', to: 'images/' }, './manifest.webmanifest'],
             { ignore: ['.DS_Store'] }

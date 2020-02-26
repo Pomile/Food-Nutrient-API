@@ -8,6 +8,7 @@
     position: fixed;
     z-index: 101;
     border-radius: 20px;
+    padding: 1rem;
 }
 
 .modalCloseBtn{ 
@@ -24,7 +25,9 @@
     .modal{
         width: 80%;
         top: 20%;
-        left: 10%;
+        left: 6%;
+        overflow-y: scroll;
+        max-height: 70vh;
     }
 }
 

@@ -24,6 +24,12 @@ class Product extends React.Component {
         const value = this.props.search.searchValue;
         this.props.getProducts(value);
     }
+    handleKeyPress = event => {
+        const value = this.props.search.searchValue;
+        if (event.charCode === 13) {
+            this.props.getProducts(value);
+        }
+    }
     render() {
        
         const {
@@ -33,6 +39,7 @@ class Product extends React.Component {
             productsError,
             loadingProducts
         } = this.props.search;
+        
         const { showModal } = this.props.ui;
         const {
             loadingProductDetail,
@@ -40,7 +47,7 @@ class Product extends React.Component {
             productDetailErrorMessage,
             product
         } = this.props.product;
-        console.log('showModal state', showModal);
+        
         
         const prod = !loadingProducts ? (<Products
             data={products}
@@ -48,15 +55,12 @@ class Product extends React.Component {
             errorMessage={productsErrorMessage}
             getProductDetail={this.props.getProductDetail} />)
             : <Spinner />;
+        
         const productDetail = !loadingProductDetail ? <Nutrients
             error={productDetailError}
             errorMessage={productDetailErrorMessage}
             data={product} /> :
             <Spinner />;
-            
-        console.log('loadingProductDetail State', loadingProductDetail);
-        console.log('productDetailError', productDetailError);
-        console.log('productDetailErrorMsg', productDetailErrorMessage);
         return (
             <Aux>
                 <Wall type='quarter'>
@@ -65,6 +69,7 @@ class Product extends React.Component {
                         input={searchValue}
                         change={this.props.setSearchValue}
                         clicked={() => this.props.getProducts(searchValue)}
+                        keyPress={this.handleKeyPress}
                     />
                 </Wall>
                 <Title>Products</Title>

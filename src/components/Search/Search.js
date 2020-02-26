@@ -10,7 +10,15 @@ const Search = (props) => {
         <div className={SearchBoxStyle}>
             <div className={classes.search}>
                 <div className={classes.searchInputBox}>
-                    <input className={classes.searchInput} type="text" placeholder="Search.." value={props.searchValue} onChange={() => props.change(event)} />
+                    <input
+                        name="search"
+                        id="search"
+                        className={classes.searchInput}
+                        type="text"
+                        placeholder="Search.."
+                        onChange={(event) => props.change(event)}
+                        onKeyPress={(event) => props.keyPress(event)}
+                    />
                     <button className={classes.searchInputBtn} onClick={props.clicked}>
                         <i className={"material-icons"}>search</i>
                     </button>
