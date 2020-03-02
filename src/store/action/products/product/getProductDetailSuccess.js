@@ -6,7 +6,6 @@ import * as actionTypes from '../../types';
  * @returns {object} object
  */
 const getProductDetailSuccess = (data) => {
-    console.log(data);
     return {
         type: actionTypes.GET_PRODUCT_DETAIL_SUCCESS,
         payload: {

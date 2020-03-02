@@ -79,7 +79,9 @@ class Product extends React.Component {
                         showModal
                             ? <Modal
                                 show={showModal}
-                                close={this.props.closeProductDetailModal}>{productDetail}
+                                close={this.props.closeProductDetailModal}>
+                                
+                                {productDetail}
                             </Modal>
                             : null
                      }

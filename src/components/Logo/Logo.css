@@ -1,15 +1,18 @@
 .Logo {
     background-color: white;
-    padding:  8px;
+    padding:  5px 8px;
     height: 100%;
     box-sizing: border-box;
     border-radius: 5px;
     display: block;
-    width: 100px;
     text-decoration: none;
     color: black;
     font-family: 'Pacifico', cursive;
     margin-left: 0%;
+}
+
+.Logo img{
+    height: 40px;
 }
 
 @media (min-width: 991px) {

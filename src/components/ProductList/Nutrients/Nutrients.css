@@ -19,9 +19,16 @@
     color: rgb(112, 111, 111);
     text-align: center;
 }
+
+.nutrientHeader{
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 24px;
+    color: rgb(112, 111, 111);
+    border-bottom: 1px solid rgb(110, 109, 109);
+}
 .nutrients{
     overflow-y: scroll;
-    height: 220px;
+    height: 180px;
 }
 
 

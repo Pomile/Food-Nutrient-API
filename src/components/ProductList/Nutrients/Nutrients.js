@@ -9,6 +9,7 @@ const Nutrients = (props) => {
         const nutrientComposition = data.nutrition.nutrients;
         return (
             <div className={classes.nutrient}>
+                <h2 className={classes.nutrientHeader}>Nutri-Facts</h2>
                 <div className={classes.nutrientImgHolder}>
                     <img className={classes.nutrientImg} src={data.images[2]} />
                 </div>
