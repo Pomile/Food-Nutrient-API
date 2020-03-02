@@ -2,7 +2,7 @@
   "name": "Food-Nutrition",
   "short_name": "Nutrition facts",
   "description": "Help health conscious individual to check product nutrition before they buy them",
-  "start_url": "https://frosty-jennings-fd1482.netlify.com/",
+  "start_url": "https://nutrifacts.netlify.com/",
   "display": "standalone",
    "prefer_related_applications": false,
   "icons": [
