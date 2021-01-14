@@ -22,7 +22,7 @@ This app helps Health concious individuals who often wants to look up the detail
 ### Project pipeline
 
   - [Pivotal Tracker stories](https://www.pivotaltracker.com/n/projects/2398431)
-  - [Frontend](https://frosty-jennings-fd1482.netlify.com/)
+  - [Frontend](https://nutrifacts.netlify.app/)
 
 ### Technologies
 
